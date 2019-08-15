@@ -4,12 +4,12 @@ import {createStackNavigator, createAppContainer } from 'react-navigation'
 // import Login from './Login'
 // import Home from './Home'
 // import Register from './Register'
-import MainApp from './Main'
+import Main from './Main'
 
 export default function App() {
   return (
     <View style={styles.container}>
-     <MainApp/>
+     <Main/>
     </View>
   );
  

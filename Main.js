@@ -14,12 +14,12 @@ const MainNavigator = createStackNavigator({
 
 const MainApp = createAppContainer(MainNavigator);
 
-//export default MainApp;
+export default MainApp;
 
-export default class Main extends Component {
-    render(){
-        return <MainApp/>
-    }
+// export default class Main extends Component {
+//     render(){
+//         return <MainApp/>
+//     }
 //   render(){
 //     return (
 //     <View style={styles.container}>
@@ -29,7 +29,7 @@ export default class Main extends Component {
 //   );
 //   }  
  
-}
+//}
 
 
 const styles = StyleSheet.create({

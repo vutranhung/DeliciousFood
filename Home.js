@@ -5,17 +5,18 @@ import ListDeliciousSave from './ListDeliciousSave'
 import ProposeFood from './ProposeFood'
 import Drawer from './Drawer'
 import HeaderDrawer from './HeaderDrawer'
-
+import { Icon } from 'react-native-elements'
 import {createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
-export default class Home extends Component {
+export  class Home extends Component {
 
   render(){
       return (
     <View style={styles.container}>
-     <DrawerApp/>
+     
     </View>
+     //<DrawerApp/>
   );
   }
 
@@ -25,14 +26,14 @@ export default class Home extends Component {
 const ListDeliciousNew_StackNavigator =createStackNavigator({
     ListDeliciousNew: {
     screen: ListDeliciousNew,
-    navigationOptions: ({ navigation }) => ({
-      title: 'DS món ngon mới nhất',
-      headerLeft: <Drawer navigationProps={navigation} />,
-      headerStyle: {
-        backgroundColor: '#0A9E9E',
-      },
-      headerTintColor: '#fff',
-    }),
+    // navigationOptions: ({ navigation }) => ({
+    //   title: 'DS món ngon mới nhất',
+    //   headerLeft: <Drawer navigationProps={navigation} />,
+    //   headerStyle: {
+    //     backgroundColor: '#0A9E9E',
+    //   },
+    //   headerTintColor: '#fff',
+    // }),
   },
 })
 
@@ -70,7 +71,7 @@ const DrawerNatigator=createDrawerNavigator({
  listDeliciousNew:{
     screen: ListDeliciousNew_StackNavigator,
        navigationOptions: {
-       drawerLabel: 'DS món ngon đã lưu',
+       drawerLabel: 'DS món ngon mới nhất',
        drawerIcon: ({ tintColor }) => <Icon name="list" color={tintColor} size={20} />
     },
 
@@ -79,8 +80,8 @@ const DrawerNatigator=createDrawerNavigator({
   listDeliciousSave:{
     screen: ListDeliciousSave_StackNavigator,
        navigationOptions: {
-       drawerLabel: 'DS món ngon mới nhất',
-       drawerIcon: ({ tintColor }) => <Icon name="book-open" color={tintColor} size={20} />
+       drawerLabel: 'DS món ngon đã lưu',
+       drawerIcon: ({ tintColor }) => <Icon name="list" color={tintColor} size={20} />
     },
   },
 
@@ -109,7 +110,7 @@ const DrawerNatigator=createDrawerNavigator({
 
 const DrawerApp=createAppContainer(DrawerNatigator)
 
-//export default DrawerApp;
+export default DrawerApp;
 
 
 const styles = StyleSheet.create({

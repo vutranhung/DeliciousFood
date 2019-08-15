@@ -11,7 +11,7 @@ const HeaderDrawer = (props) => (
   <Avatar
   size="medium"
   rounded
-  source={require('./assets/food_icon.jpg')}
+  source={require('./assets/food_icon.png')}
 
 />
 

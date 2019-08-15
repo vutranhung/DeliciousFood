@@ -80,7 +80,7 @@ header: null,
           style={{ width:'100%',height:'100%'}}        
           source={require('./assets/login_backgroup.jpg')}>
        <View style={styles.container}> 
-       <Image source={require('./assets/food_icon.jpg')} />  
+       <Image source={require('./assets/food_icon.png')} />  
        <Text style={styles.styleTextLess}>Delicious Food Daily</Text>  
        <Input inputContainerStyle={styles.styleInputContainer} inputStyle={styles.styleInput}
         placeholderTextColor={'#fffbfb'} placeholder='Địa chỉ email'
@@ -121,7 +121,8 @@ const styles = StyleSheet.create({
   
   styleTextLess:{
     color:'#f87979',
-    marginBottom:50
+    marginBottom:50,
+    fontSize:30
   },
 
 

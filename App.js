@@ -4,27 +4,21 @@ import {createStackNavigator, createAppContainer } from 'react-navigation'
 // import Login from './Login'
 // import Home from './Home'
 // import Register from './Register'
-import Main from './Main'
+import MainApp from './Main'
 
-export default function App() {
+export  function App() {
   return (
-    <View style={styles.container}>
-     <Main/>
+    <View style={styles.container}>    
+     <MainApp/>
     </View>
   );
+
+ // return <MainApp/>
  
 }
 
-// const MainNavigator = createStackNavigator({
-//   login: {screen: Login},
-//   home: {screen: Home},
-//   register:{screen: Register}
-// }
-// );
+export default MainApp;
 
-// const MainApp = createAppContainer(MainNavigator);
-
-// export default MainApp
 
 const styles = StyleSheet.create({
   container: {

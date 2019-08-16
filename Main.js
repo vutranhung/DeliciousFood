@@ -2,12 +2,14 @@ import React,{Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator, createAppContainer } from 'react-navigation'
 import Login from './Login'
-import DrawerApp from './Home'
+import Home  from './Home'
 import Register from './Register'
+import Logout from './Logout'
 
 const MainNavigator = createStackNavigator({
   login: {screen: Login},
-  home: {screen: DrawerApp},
+  home: {screen: Home},
+  //logout:{screen:Logout},
   register:{screen: Register}
 }
 );

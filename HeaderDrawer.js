@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Text, View, StyleSheet,Image } from 'react-native'
+import { Text, View, StyleSheet,Image, TouchableOpacity,Alert } from 'react-native'
 import { DrawerItems, DrawerNavigation } from 'react-navigation'
 import {Container, Content, Header, Body } from 'native-base';
 import { Avatar } from 'react-native-elements';
@@ -19,6 +19,25 @@ const HeaderDrawer = (props) => (
   style={styles.drawerImage}
   source={require('../assets/logo.png')}/> */}
   <Text style={{color:'#EC5C1C'}}>Foods Delicious </Text>
+  <TouchableOpacity 
+  
+  onPress={()=>
+              Alert.alert(
+                'Đăng xuất',
+                'Bạn muốn thoát khỏi chương trình?',
+                [
+                  {text: 'Cancel', onPress: () => {return null}},
+                  {text: 'Ok', onPress: () => {
+                   
+                    props.navigation.navigate('login')
+                  }},
+                ],
+                { cancelable: false }
+              )  
+            }>
+  
+             <Text style={{margin: 16,fontWeight: 'bold',color:'#19299c'}}>Đăng xuất</Text>
+       </TouchableOpacity>
   </Body>
   </Header>
   <Content>

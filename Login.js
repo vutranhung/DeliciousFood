@@ -85,11 +85,14 @@ header: null,
        <Input inputContainerStyle={styles.styleInputContainer} inputStyle={styles.styleInput}
         placeholderTextColor={'#fffbfb'} placeholder='Địa chỉ email'
         onChangeText={(text)=>{this.setState({email:text})}}
+        title='dangtung2019@gmail.com'
         />
        <Input inputContainerStyle={styles.styleInputContainer}  inputStyle={styles.styleInput} 
        secureTextEntry={true}
        onChangeText={(text)=>{this.setState({password:text})}}
-       placeholderTextColor={'#fffbfb'} placeholder='Mật khẩu' />  
+       placeholderTextColor={'#fffbfb'} placeholder='Mật khẩu'
+       title='123456'
+        />  
 
         <TouchableOpacity onPress={()=>this.ProcessLogin()}>
           <View style={styles.styleButtonLogin}>

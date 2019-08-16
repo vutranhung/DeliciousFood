@@ -8,15 +8,18 @@ import HeaderDrawer from './HeaderDrawer'
 import { Icon } from 'react-native-elements'
 import {createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Logout from './Logout';
 
-export  class Home extends Component {
+ export default class Home extends Component {
+
+  static navigationOptions = {
+    header: null,
+    };
 
   render(){
+    //TODO tại sao phải khai báo ở đây mới nhận
       return (
-    <View style={styles.container}>
-     
-    </View>
-     //<DrawerApp/>
+     <DrawerApp/>
   );
   }
 
@@ -26,14 +29,14 @@ export  class Home extends Component {
 const ListDeliciousNew_StackNavigator =createStackNavigator({
     ListDeliciousNew: {
     screen: ListDeliciousNew,
-    // navigationOptions: ({ navigation }) => ({
-    //   title: 'DS món ngon mới nhất',
-    //   headerLeft: <Drawer navigationProps={navigation} />,
-    //   headerStyle: {
-    //     backgroundColor: '#0A9E9E',
-    //   },
-    //   headerTintColor: '#fff',
-    // }),
+    navigationOptions: ({ navigation }) => ({
+      title: 'DS món ngon mới nhất',
+      headerLeft: <Drawer navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: '#0A9E9E',
+      },
+      headerTintColor: '#fff',
+    }),
   },
 })
 
@@ -65,6 +68,11 @@ const ProposeFood_StackNavigator =createStackNavigator({
   },
 })
 
+const Logout_StackNavigator =createStackNavigator({
+  Logout: {
+  screen: Logout,
+},
+})
 
 
 const DrawerNatigator=createDrawerNavigator({
@@ -74,6 +82,7 @@ const DrawerNatigator=createDrawerNavigator({
        drawerLabel: 'DS món ngon mới nhất',
        drawerIcon: ({ tintColor }) => <Icon name="list" color={tintColor} size={20} />
     },
+
 
   },
 
@@ -94,6 +103,14 @@ const DrawerNatigator=createDrawerNavigator({
 
   },
 
+  logout:{
+    screen:Logout_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Đăng xuất',
+      drawerIcon: ({ tintColor }) => <Icon name="lock-open" color={tintColor} size={20} />
+  }
+},
+
 } ,
 {
    contentComponent: HeaderDrawer,
@@ -110,7 +127,8 @@ const DrawerNatigator=createDrawerNavigator({
 
 const DrawerApp=createAppContainer(DrawerNatigator)
 
-export default DrawerApp;
+//TODO export default thì ko nhận??
+export  {DrawerApp};
 
 
 const styles = StyleSheet.create({

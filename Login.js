@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import { StyleSheet, Text, View, TextInput, Button,Image, Alert, ImageBackground,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput,AsyncStorage, Button,Image, Alert, ImageBackground,TouchableOpacity } from 'react-native';
 //import Icon from 'react-native-vector-icons/FontAwesome';
  import { Input  } from 'react-native-elements';
-
+import {connect} from 'react-redux'
 
 export default class Login extends Component{
 
@@ -61,6 +61,10 @@ header: null,
         Alert.alert('Đăng nhập không thành công')
       }else
       {
+          //TODO gan token vao redux store
+         // this.props.setToken(responseJson.token)
+         // gán token vao AsyncStorage
+           AsyncStorage.setItem("token", responseJson.token);
           // chuyen sang man home
           const {navigate} = this.props.navigation
           navigate('home')
@@ -112,6 +116,21 @@ header: null,
      )
    }
 }
+
+// const const PutDataChangeToStore=(dispatch)=>{
+//    return {
+//      setToken:(token)=>{
+//        dispatch({type:token,token:token})
+//      }
+//    }
+// }
+
+// const LoginConnected=connect(
+//   null,
+//   PutDataChangeToStore
+// )(Login)
+// export {LoginConnected}
+
 
 const styles = StyleSheet.create({
   container: {

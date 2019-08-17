@@ -3,13 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import {createStackNavigator, createAppContainer } from 'react-navigation'
 import Login from './Login'
 import Home  from './Home'
+import ConnectedLogin from './ConnectedLogin'
 import Register from './Register'
 import Logout from './Logout'
 
 const MainNavigator = createStackNavigator({
   login: {screen: Login},
+  //login: {screen: ConnectedLogin},
   home: {screen: Home},
-  //logout:{screen:Logout},
+  logout:{screen:Logout},
   register:{screen: Register}
 }
 );
@@ -29,7 +31,6 @@ export default MainApp;
 //   }  
  
 // }
-
 
 const styles = StyleSheet.create({
   container: {

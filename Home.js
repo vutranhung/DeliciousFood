@@ -9,6 +9,8 @@ import { Icon } from 'react-native-elements'
 import {createStackNavigator, createAppContainer, createDrawerNavigator } from 'react-navigation'
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Logout from './Logout';
+import DeliciousDetail from './DeliciousDetail'
+import FullScreenImage from './FullScreenImage'
 
  export default class Home extends Component {
 
@@ -17,7 +19,7 @@ import Logout from './Logout';
     };
 
   render(){
-    //TODO tại sao phải khai báo ở đây mới nhận
+    // tại sao phải khai báo ở đây mới nhận minh?
       return (
      <DrawerApp/>
   );
@@ -26,18 +28,22 @@ import Logout from './Logout';
 }
 
 
+
 const ListDeliciousNew_StackNavigator =createStackNavigator({
     ListDeliciousNew: {
     screen: ListDeliciousNew,
-    navigationOptions: ({ navigation }) => ({
-      title: 'DS món ngon mới nhất',
-      headerLeft: <Drawer navigationProps={navigation} />,
-      headerStyle: {
-        backgroundColor: '#0A9E9E',
-      },
-      headerTintColor: '#fff',
-    }),
+    // navigationOptions: ({ navigation }) => ({
+    //   title: 'DS món ngon mới nhất',
+    //   headerLeft: <Drawer navigationProps={navigation} />,
+    //   headerRight: <Button title='Tải lại' onPress={navigation.getParam('reloadData')}/>,
+    //   headerStyle: {
+    //     backgroundColor: '#0A9E9E',
+    //   },
+    //   headerTintColor: '#fff',
+    // }),
   },
+   DeliciousDetail:{screen:DeliciousDetail},
+   FullScreenImage:{screen:FullScreenImage}
 })
 
 const ListDeliciousSave_StackNavigator =createStackNavigator({
@@ -52,6 +58,8 @@ const ListDeliciousSave_StackNavigator =createStackNavigator({
       headerTintColor: '#fff',
     }),
   },
+ 
+
 })
 
 const ProposeFood_StackNavigator =createStackNavigator({
@@ -127,7 +135,7 @@ const DrawerNatigator=createDrawerNavigator({
 
 const DrawerApp=createAppContainer(DrawerNatigator)
 
-//TODO export default thì ko nhận??
+//export default thì ko nhận minh??
 export  {DrawerApp};
 
 

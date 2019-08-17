@@ -1,0 +1,6 @@
+Các chức năng đã làm
+1. đăng nhập
+2. đăng ký
+3. drawer
+4. Danh sách món ngon mới nhất, tải lại
+5. chi tiết món ngon mới nhất, click full size
